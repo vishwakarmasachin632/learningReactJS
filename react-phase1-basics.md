@@ -170,6 +170,127 @@ class Header extends Component {
 👉 Aajkal mostly **functional components + hooks** use hote hai
 
 ---
+# 🔹 1. Pehle kya tha? (Class Components)
+
+Earlier in React, we used class components:
+
+```jsx
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello</h1>;
+  }
+}
+```
+
+👉 Problem kya thi?
+
+* `this` keyword ka confusion 😵
+* Boilerplate code zyada
+* State manage karna complex
+* Lifecycle methods (`componentDidMount` etc.) yaad rakhne padte the
+
+---
+
+# 🔹 2. Ab kya use ho raha hai? (Functional Components)
+
+Now we use functional components + Hooks
+
+```jsx
+function MyComponent() {
+  return <h1>Hello</h1>;
+}
+```
+
+Aur state bhi manage kar sakte ho:
+
+```jsx
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
+```
+
+---
+
+# 🔥 3. Why Functional Components are Preferred?
+
+## ✅ 1. Simple & Clean
+
+* No `this`
+* Less code
+* Easy to read
+
+---
+
+## ✅ 2. Hooks ne game change kar diya
+
+Hooks (like `useState`, `useEffect`) ne class components ki need almost khatam kar di
+
+👉 Example:
+
+* `componentDidMount` ❌
+* `useEffect` ✅
+
+---
+
+## ✅ 3. Better Reusability
+
+Custom hooks bana sakte ho:
+
+```js
+function useFetchData() {
+  // reusable logic
+}
+```
+
+👉 Ye class me mushkil tha
+
+---
+
+## ✅ 4. Performance (thoda better)
+
+* Functional components lightweight hote hain
+* Aur modern optimizations (like memoization) easily apply hote hain
+
+---
+
+## ✅ 5. Industry Standard
+
+Aaj ke time me:
+
+* New projects → Functional components only
+* Companies expect Hooks knowledge
+
+---
+
+## ✅ 6. Easier Testing & Debugging
+
+* Functions predictable hote hain
+* Debug karna easy hota hai
+
+---
+
+# 🔴 4. Kya Class Components useless ho gaye?
+
+👉 Nahi, but rarely used
+
+Use cases:
+
+* Old legacy projects
+* Error boundaries (ab hooks se bhi aa gaya hai)
+
+---
+
+# 🧠 Final Simple Line
+
+👉 Functional components use hote hain because:
+
+> **"They are simpler, cleaner, and powerful due to Hooks."**
+
+---
 
 ### 🔥 Important Concept: Component Reusability
 
