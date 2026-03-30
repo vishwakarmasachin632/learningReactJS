@@ -170,7 +170,141 @@ function Product() {
 ```
 
 ---
+# 🧠 useDispatch & useSelector (Redux Hooks Explained)
 
+---
+
+## 🧠 1. `useDispatch` — “Action bhejne ke liye”
+
+👉 Iska use hota hai **Redux store ko update karne ke liye**
+
+### 📌 Simple language:
+
+> “Bhai store me change karna hai → dispatch use karo”
+
+---
+
+### ✅ Example:
+
+```js
+import { useDispatch } from "react-redux";
+import { addItem } from "./cartSlice";
+
+function Product() {
+  const dispatch = useDispatch();
+
+  return (
+    <button onClick={() => dispatch(addItem({ id: 1, name: "Phone" }))}>
+      Add to Cart
+    </button>
+  );
+}
+```
+
+### 🔥 Kya ho raha hai?
+
+* Button click hua
+* `dispatch` action bhej raha hai
+* reducer state update karega
+
+---
+
+## 🧠 2. `useSelector` — “Data lene ke liye”
+
+👉 Iska use hota hai **Redux store se data read karne ke liye**
+
+### 📌 Simple language:
+
+> “Store me kya data hai → useSelector se uthao”
+
+---
+
+### ✅ Example:
+
+```js
+import { useSelector } from "react-redux";
+
+function Navbar() {
+  const cart = useSelector((state) => state.cart);
+
+  return <h1>Items: {cart.length}</h1>;
+}
+```
+
+### 🔥 Kya ho raha hai?
+
+* Store se `cart` data liya
+* UI me show kiya
+* Jab state change hogi → auto re-render
+
+---
+
+## ⚡ Dono ka relation (Flow)
+
+```
+useDispatch → Action bhejta hai → Store update hota hai
+useSelector → Updated data read karta hai → UI update hoti hai
+```
+
+---
+
+## 🛒 Real-Life Example (E-commerce)
+
+### 👇 Situation:
+
+* Product page → item add karega
+* Navbar → cart count dikhayega
+
+### 🔁 Flow:
+
+1. Product page → `useDispatch` → item add
+2. Store update
+3. Navbar → `useSelector` → updated count show
+
+---
+
+## 🧩 Ek hi component me dono use
+
+```js
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "./cartSlice";
+
+function App() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  return (
+    <>
+      <button onClick={() => dispatch(addItem({ id: 1 }))}>
+        Add
+      </button>
+      <p>Total: {cart.length}</p>
+    </>
+  );
+}
+```
+
+---
+
+## ❌ Common Mistakes
+
+❌ `useSelector(state => state)` → pura store mat uthao
+✅ `useSelector(state => state.cart)` → specific lo
+
+❌ Dispatch directly call mat karo render me
+✅ Event handler me use karo
+
+---
+
+## 🎯 Short Summary
+
+| Hook          | Use                        |
+| ------------- | -------------------------- |
+| `useDispatch` | Store update karne ke liye |
+| `useSelector` | Store se data lene ke liye |
+
+
+---
 ## 📌 10. Async Operations (API Calls)
 
 ```js
