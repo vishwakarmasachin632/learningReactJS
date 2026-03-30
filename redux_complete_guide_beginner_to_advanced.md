@@ -459,6 +459,363 @@ Redux ek powerful tool hai jo complex applications me state management ko easy b
 👉 Agar small hai → useState/useContext enough
 
 ---
+# 🎯 Redux Top 30 Objective Questions (MCQs)
+
+---
+
+## ✅ 1. Redux ka main purpose kya hai?
+
+A. UI design karna
+B. State manage karna
+C. API call karna
+D. Routing
+
+**Answer:** B
+**Explanation:** Redux ka primary role global state ko manage karna hai taaki data consistent aur predictable rahe.
+
+---
+
+## ✅ 2. Redux me data kaha store hota hai?
+
+A. Component
+B. Local storage
+C. Store
+D. Reducer
+
+**Answer:** C
+**Explanation:** Store Redux ka central container hota hai jahan poora application state rakha jata hai.
+
+---
+
+## ✅ 3. Redux ka "single source of truth" kya hai?
+
+A. Action
+B. Reducer
+C. Store
+D. Dispatch
+
+**Answer:** C
+**Explanation:** Store hi ek jagah hoti hai jahan se pura app state access karta hai.
+
+---
+
+## ✅ 4. Action kya hota hai?
+
+A. Function
+B. Object
+C. Array
+D. Class
+
+**Answer:** B
+**Explanation:** Action ek plain object hota hai jo batata hai kya event hua.
+
+---
+
+## ✅ 5. Action me kaunsa field mandatory hota hai?
+
+A. payload
+B. type
+C. data
+D. value
+
+**Answer:** B
+**Explanation:** `type` field action ko uniquely identify karta hai.
+
+---
+
+## ✅ 6. Reducer kya return karta hai?
+
+A. Old state
+B. New state
+C. Action
+D. Component
+
+**Answer:** B
+**Explanation:** Reducer hamesha updated (new) state return karta hai.
+
+---
+
+## ✅ 7. Reducer ka type kya hota hai?
+
+A. Object
+B. Function
+C. Class
+D. Array
+
+**Answer:** B
+**Explanation:** Reducer ek pure function hota hai.
+
+---
+
+## ✅ 8. Dispatch ka use kya hai?
+
+A. State read karna
+B. Action bhejna
+C. UI render karna
+D. API call
+
+**Answer:** B
+**Explanation:** Dispatch function action ko store tak bhejta hai.
+
+---
+
+## ✅ 9. Redux flow kya hai?
+
+A. Reducer → Action → Store
+B. Component → Action → Reducer → Store
+C. Store → Reducer → Component
+D. Action → Store → Reducer
+
+**Answer:** B
+**Explanation:** Component action dispatch karta hai, reducer process karta hai, store update hota hai.
+
+---
+
+## ✅ 10. Redux me state immutable hoti hai?
+
+A. Yes
+B. No
+
+**Answer:** A
+**Explanation:** State directly change nahi hoti, naya state create hota hai.
+
+---
+
+## ✅ 11. Redux Toolkit kya hai?
+
+A. Library
+B. Framework
+C. Official toolset
+D. API
+
+**Answer:** C
+**Explanation:** Redux Toolkit official recommended package hai jo Redux ko simplify karta hai.
+
+---
+
+## ✅ 12. configureStore kis package se aata hai?
+
+A. redux
+B. react-redux
+C. @reduxjs/toolkit
+D. axios
+
+**Answer:** C
+**Explanation:** Modern Redux setup ke liye ye function Redux Toolkit me hota hai.
+
+---
+
+## ✅ 13. Slice kya hota hai?
+
+A. Component
+B. Reducer + Actions
+C. API
+D. Hook
+
+**Answer:** B
+**Explanation:** Slice me reducer aur uske actions ek jagah define hote hain.
+
+---
+
+## ✅ 14. createSlice ka use kya hai?
+
+A. API call
+B. Store banana
+C. Reducer + Action banana
+D. UI banana
+
+**Answer:** C
+**Explanation:** Ye boilerplate kam karta hai aur actions + reducer ek sath banata hai.
+
+---
+
+## ✅ 15. useSelector ka use kya hai?
+
+A. Data bhejna
+B. Data read karna
+C. API call
+D. Dispatch karna
+
+**Answer:** B
+**Explanation:** Store se data lene ke liye use hota hai.
+
+---
+
+## ✅ 16. useDispatch ka use kya hai?
+
+A. Data read karna
+B. State delete karna
+C. Action bhejna
+D. UI update
+
+**Answer:** C
+**Explanation:** Store ko update karne ke liye action dispatch karta hai.
+
+---
+
+## ✅ 17. Provider ka use kya hai?
+
+A. API call
+B. Store ko app me provide karna
+C. Reducer banana
+D. Hook banana
+
+**Answer:** B
+**Explanation:** React app ko Redux store se connect karta hai.
+
+---
+
+## ✅ 18. Redux me async kaise handle hota hai?
+
+A. useState
+B. createAsyncThunk
+C. useEffect
+D. map
+
+**Answer:** B
+**Explanation:** Async operations ke liye Redux Toolkit me ye helper use hota hai.
+
+---
+
+## ✅ 19. createAsyncThunk kya return karta hai?
+
+A. Object
+B. Promise lifecycle actions
+C. Array
+D. Function only
+
+**Answer:** B
+**Explanation:** Ye pending, fulfilled, rejected actions generate karta hai.
+
+---
+
+## ✅ 20. Redux me kaun state ko modify karta hai?
+
+A. Component
+B. Reducer
+C. Action
+D. Store
+
+**Answer:** B
+**Explanation:** Sirf reducer hi state update logic define karta hai.
+
+---
+
+## ✅ 21. Redux DevTools ka use kya hai?
+
+A. UI design
+B. Debugging
+C. Routing
+D. API
+
+**Answer:** B
+**Explanation:** State changes track aur debug karne ke liye.
+
+---
+
+## ✅ 22. Redux me multiple reducers kaise combine karte hain?
+
+A. combineReducers
+B. mergeReducers
+C. joinReducers
+D. attachReducers
+
+**Answer:** A
+**Explanation:** Multiple reducers ko ek root reducer me combine karta hai.
+
+---
+
+## ✅ 23. Redux me middleware ka use kya hai?
+
+A. UI styling
+B. Async logic handle karna
+C. State store karna
+D. Routing
+
+**Answer:** B
+**Explanation:** Middleware side effects aur async logic handle karta hai.
+
+---
+
+## ✅ 24. Redux Thunk kya hai?
+
+A. Hook
+B. Middleware
+C. Reducer
+D. Store
+
+**Answer:** B
+**Explanation:** Async actions likhne ke liye popular middleware.
+
+---
+
+## ✅ 25. Redux me state directly mutate kar sakte hain?
+
+A. Yes
+B. No (except Toolkit internally)
+
+**Answer:** B
+**Explanation:** Plain Redux me mutation allowed nahi hai; Toolkit internally handle karta hai.
+
+---
+
+## ✅ 26. Redux kis pattern pe based hai?
+
+A. MVC
+B. Flux
+C. Observer
+D. Singleton
+
+**Answer:** B
+**Explanation:** Redux Flux architecture follow karta hai.
+
+---
+
+## ✅ 27. React-Redux kya provide karta hai?
+
+A. Hooks
+B. UI components
+C. Routing
+D. API calls
+
+**Answer:** A
+**Explanation:** useSelector aur useDispatch jaise hooks provide karta hai.
+
+---
+
+## ✅ 28. useSelector kab re-render karta hai?
+
+A. Jab component mount ho
+B. Jab state change ho
+C. Jab API call ho
+D. Kabhi nahi
+
+**Answer:** B
+**Explanation:** Jab selected state change hoti hai tab component re-render hota hai.
+
+---
+
+## ✅ 29. Redux me best practice kya hai?
+
+A. Large reducers
+B. Direct mutation
+C. Small slices
+D. No structure
+
+**Answer:** C
+**Explanation:** Chhote aur modular slices maintainable hote hain.
+
+---
+
+## ✅ 30. Redux small apps me use karna chahiye?
+
+A. Yes
+B. No (usually overkill)
+
+**Answer:** B
+**Explanation:** Small apps me unnecessary complexity badhata hai.
+
+---
 
 ## 🎯 Next Steps
 
