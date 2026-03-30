@@ -369,13 +369,85 @@ src/
 | Setup | Complex | Easy |
 
 ---
-
 ## 📌 14. Interview Questions
 
-- Redux kya hai?
-- Action vs Reducer?
-- Redux Toolkit kya hai?
-- useSelector vs useDispatch?
+### ❓ Redux kya hai?
+
+Redux ek **state management library** hai jo React applications me global state ko manage karne ke liye use hoti hai.
+Iska main purpose hai data ko predictable aur centralized banana (single source of truth).
+
+---
+
+### ❓ Action vs Reducer?
+
+#### 🔹 Action:
+
+* Ek **object** hota hai jo batata hai *kya hua*
+* Isme `type` aur optional `payload` hota hai
+
+```js
+{ type: "ADD_TO_CART", payload: item }
+```
+
+#### 🔹 Reducer:
+
+* Ek **function** hota hai jo decide karta hai state kaise update hogi
+* Current state + action → new state return karta hai
+
+```js
+function cartReducer(state = [], action) {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+}
+```
+
+---
+
+### ❓ Redux Toolkit kya hai?
+
+Redux Toolkit ek **official recommended way** hai Redux use karne ka.
+
+#### ✅ Benefits:
+
+* Boilerplate code kam karta hai
+* Easy setup (`configureStore`)
+* Slice concept (actions + reducer together)
+* Built-in support for async (createAsyncThunk)
+
+---
+
+### ❓ useSelector vs useDispatch?
+
+| Hook          | Use                                                    |
+| ------------- | ------------------------------------------------------ |
+| `useSelector` | Store se data read karne ke liye                       |
+| `useDispatch` | Store ko update karne ke liye (actions bhejne ke liye) |
+
+#### 🔹 Example:
+
+```js
+const dispatch = useDispatch();
+const cart = useSelector((state) => state.cart);
+
+dispatch(addItem({ id: 1 }));
+```
+
+---
+
+### 🎯 Short Trick (Interview Me Bolne Ke Liye)
+
+* Redux = Global State Manager
+* Action = What happened
+* Reducer = How state changes
+* useSelector = Get data
+* useDispatch = Update data
+
+---
+
 
 ---
 
