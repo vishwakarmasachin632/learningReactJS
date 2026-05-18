@@ -146,7 +146,7 @@ They are file formats used mainly in React applications.
 | Uses JavaScript | Uses TypeScript |
 | No type safety | Strong type safety |
 | Easier for beginners | Better for large apps |
-| Errors found at runtime | Errors found during development |
+| Errors found at runtime | Errors found during development(compile time) |
 
 ---
 
