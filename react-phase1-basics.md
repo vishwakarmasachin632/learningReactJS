@@ -128,6 +128,46 @@ return <h1>Hello {name}</h1>;
 👉 `{}` ke andar JS likhte hai
 
 ---
+# JSX vs TSX
+
+In React development:
+
+- **JSX** = JavaScript + HTML-like syntax
+- **TSX** = TypeScript + JSX
+
+They are file formats used mainly in React applications.
+
+---
+
+## Main Difference
+
+| JSX | TSX |
+|---|---|
+| Uses JavaScript | Uses TypeScript |
+| No type safety | Strong type safety |
+| Easier for beginners | Better for large apps |
+| Errors found at runtime | Errors found during development |
+
+---
+
+## JSX Example
+
+```jsx
+function User(props) {
+  return <h1>{props.name}</h1>;
+}
+```
+### TSX Example
+
+```tsx
+type UserProps = {
+  name: string;
+};
+
+function User({ name }: UserProps) {
+  return <h1>{name}</h1>;
+}
+---
 
 ## 🔹 7. Components (🔥 Core Concept)
 
