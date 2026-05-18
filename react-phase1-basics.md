@@ -354,6 +354,201 @@ function App() {
 👉 Same component multiple baar use kar sakte ho
 
 ---
+# 🔄 React Component Lifecycle
+
+## What is Component Lifecycle?
+
+Component lifecycle means the different stages a React component goes through from creation to removal.
+
+In simple words:
+
+> Component lifecycle is the journey of a component from mounting on the screen, updating, and finally unmounting.
+
+---
+
+# Main Phases of Component Lifecycle
+
+React component lifecycle has mainly 3 phases:
+
+```text
+1. Mounting
+2. Updating
+3. Unmounting
+```
+
+---
+
+# 1. Mounting Phase
+
+## What is Mounting?
+
+Mounting means the component is created and shown on the screen for the first time.
+
+Simple words:
+
+> When a component appears on the UI for the first time, it is called mounting.
+
+---
+
+## Example
+
+```jsx
+function App() {
+  return <h1>Hello React</h1>;
+}
+```
+
+When this component is displayed in the browser for the first time, it is mounted.
+
+---
+
+## Functional Component Mounting Example
+
+```jsx
+import { useEffect } from "react";
+
+function Welcome() {
+  useEffect(() => {
+    console.log("Component mounted");
+  }, []);
+
+  return <h1>Welcome to React</h1>;
+}
+
+export default Welcome;
+```
+
+### Explanation
+
+```jsx
+useEffect(() => {
+  console.log("Component mounted");
+}, []);
+```
+
+Here, empty dependency array `[]` means this code runs only once when the component mounts.
+
+---
+
+# 2. Updating Phase
+
+## What is Updating?
+
+Updating means the component re-renders when its state or props change.
+
+Simple words:
+
+> When data changes and React updates the UI again, it is called updating.
+
+---
+
+## Updating happens when:
+
+- State changes
+- Props change
+- Parent component re-renders
+
+---
+
+## Functional Component Updating Example
+
+```jsx
+import { useEffect, useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Component updated because count changed");
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+### Explanation
+
+```jsx
+useEffect(() => {
+  console.log("Component updated because count changed");
+}, [count]);
+```
+
+This code runs whenever `count` changes.
+
+---
+
+# 3. Unmounting Phase
+
+## What is Unmounting?
+
+Unmounting means the component is removed from the screen.
+
+Simple words:
+
+> When a component is removed from the UI, it is called unmounting.
+
+---
+
+## Functional Component Unmounting Example
+
+```jsx
+import { useEffect } from "react";
+
+function Timer() {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("Timer running");
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+      console.log("Component unmounted");
+    };
+  }, []);
+
+  return <h1>Timer Component</h1>;
+}
+
+export default Timer;
+```
+
+### Explanation
+
+```jsx
+return () => {
+  clearInterval(timer);
+  console.log("Component unmounted");
+};
+```
+
+This return function is called a cleanup function.
+
+It runs when the component is removed from the screen.
+
+---
+
+# Lifecycle in Functional Components
+
+In functional components, lifecycle is handled using the `useEffect` hook.
+
+| Lifecycle Phase | Functional Component |
+|---|---|
+| Mounting | `useEffect(() => {}, [])` |
+| Updating | `useEffect(() => {}, [dependency])` |
+| Unmounting | Cleanup function inside `useEffect` |
+
+---
+---
 
 ## 📌 Summary (Aaj kya seekha)
 
