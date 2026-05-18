@@ -167,6 +167,7 @@ type UserProps = {
 function User({ name }: UserProps) {
   return <h1>{name}</h1>;
 }
+```
 ---
 
 ## 🔹 7. Components (🔥 Core Concept)
