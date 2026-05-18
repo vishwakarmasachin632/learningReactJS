@@ -591,7 +591,25 @@ function Footer() {
   return <p>Footer Section</p>;
 }
 ```
+---
+# Default Export vs Named Export
 
+## Difference Table
+
+| Point | Default Export | Named Export |
+|---|---|---|
+| Number of exports | Only one default export per file | Multiple named exports per file |
+| Import syntax | Without `{}` | With `{}` |
+| Import name | Can use any name | Must use exact exported name |
+| Best for | Main component of a file | Multiple components/functions |
+| Example export | `export default Header` | `export { Header }` |
+| Example import | `import Header from "./Header"` | `import { Header } from "./Header"` |
+
+---
+
+## One-line Answer
+
+> Default export allows one main export per file and can be imported with any name, while named export allows multiple exports and must be imported with the exact name using curly braces.
 ---
 # 🚀 React Phase 1: Important Interview Questions and Answers
 
